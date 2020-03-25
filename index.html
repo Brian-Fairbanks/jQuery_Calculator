@@ -74,10 +74,28 @@
   </div>
 
 <script type="text/javascript">
+//These are our DOM inputs
+var firstNumber = document.getElementById("first-number");
+var secondNumber = document.getElementById("second-number");
+var operator = document.getElementById("operator");
+var result = document.getElementById("result");
+//These are our buttons!
+var numberButtons = $(".number");
+var operatorButtons = document.getElementsByClassName("operator");
+var equalsButton = document.getElementsByClassName("equal");
+var clearButton = document.getElementsByClassName("clear");
+
 
 $(document).ready(function() {
 
 // Your code here...
+numberButtons.on('click', function () {
+    //alert("you've clicked a number");
+  });
+
+  
+
+});
 
 
 });
