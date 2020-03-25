@@ -98,16 +98,13 @@ function numberclicked(event){
 // handling for when an operator button is clicked
 function operatorClicked(event){
 
-  // check if opperator is already set
-
+  // check if opperator is already set, and stop the rest of the function if it is
   if( operator.text() !="" ){return;}
 
   //get the operator the user clicked
   clickedOperator = event.target.textContent;
-
   // set the operator in the DOM
   operator.text(clickedOperator);
-
   // switch to writing in the second number field
   numberInputing = secondNumber;
 }
@@ -117,11 +114,11 @@ $(document).ready(function() {
 
   // Number buttons
   numberButtons.on('click',numberclicked);
-
   // Operator buttons
   operatorButtons.on('click',operatorClicked);
-
   // Equals button
+
+  
   equalsButton.on('click', function () {
       //alert("you've clicked a number");
     });
