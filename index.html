@@ -75,27 +75,39 @@
 
 <script type="text/javascript">
 //These are our DOM inputs
-var firstNumber = document.getElementById("first-number");
-var secondNumber = document.getElementById("second-number");
-var operator = document.getElementById("operator");
-var result = document.getElementById("result");
+var firstNumber = $("#first-number");
+var secondNumber = $("#second-number");
+var operator = $("#operator");
+var result = $("#result");
 //These are our buttons!
 var numberButtons = $(".number");
-var operatorButtons = document.getElementsByClassName("operator");
-var equalsButton = document.getElementsByClassName("equal");
-var clearButton = document.getElementsByClassName("clear");
+var operatorButtons = $(".operator");
+var equalsButton = $(".equal");
+var clearButton = $(".clear");
 
 
 $(document).ready(function() {
 
-// Your code here...
-numberButtons.on('click', function () {
-    //alert("you've clicked a number");
-  });
+  // Number buttons
+  numberButtons.on('click', function () {
+      //alert("you've clicked a number");
+    });
 
-  
+  // Operator buttons
+  operatorButtons.on('click', function () {
+      //alert("you've clicked a number");
+    });
 
-});
+  // Equals button
+  equalsButton.on('click', function () {
+      //alert("you've clicked a number");
+    });
+
+  // Clear buttons
+  clearButton.on('click', function () {
+      //alert("you've clicked a number");
+    });
+
 
 
 });
