@@ -98,34 +98,74 @@ function numberclicked(event){
 // handling for when an operator button is clicked
 function operatorClicked(event){
 
-  // check if opperator is already set, and stop the rest of the function if it is
+  // check if opperator is already set
+
   if( operator.text() !="" ){return;}
 
   //get the operator the user clicked
   clickedOperator = event.target.textContent;
+
   // set the operator in the DOM
   operator.text(clickedOperator);
+
   // switch to writing in the second number field
   numberInputing = secondNumber;
 }
 
+//minus
+// divide
+//equals
+//clear
+
+function minus(){
+  num1 = parseInt(firstNumber.text());
+  num2 = parseInt(secondNumber.text());
+  console.log(num1-num2)
+  return num1-num2;
+}
+
+function divide(){
+  num1 = parseInt(firstNumber.text());
+  num2 = parseInt(secondNumber.text());
+  return num1/num2;
+}
 
 $(document).ready(function() {
 
   // Number buttons
   numberButtons.on('click',numberclicked);
+
   // Operator buttons
   operatorButtons.on('click',operatorClicked);
-  // Equals button
 
-  
+  // Equals button
   equalsButton.on('click', function () {
-      //alert("you've clicked a number");
+      //alert("you've clicked =");
+
+      //alert(operator.text());
+      var value;
+
+      if (operator.text() == "−"){
+        value = minus();
+      }
+      else if(operator.text() == "÷"){
+        value = divide();
+      }
+      else{
+        value = "ERROR"
+      }
+
+      result.text(value);
     });
 
   // Clear buttons
   clearButton.on('click', function () {
       //alert("you've clicked a number");
+      numberInputing = firstNumber;
+      operator.text("");
+      firstNumber.text("");
+      secondNumber.text("");
+      result.text("");
     });
 
 
